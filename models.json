@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "title": "Agentic Token Pricing — Like-for-Like",
+    "subtitle": "3-cluster view · Chinese models at US-hosted rates · Corrected vs. Artificial Analysis",
+    "blend": {
+      "cached_input_tokens": 700000,
+      "cache_miss_input_tokens": 300000,
+      "output_tokens": 400000,
+      "cache_hit_fraction_of_input": 0.1
+    },
+    "last_updated": "2026-08-23"
+  },
+  "models": [
+    {
+      "cluster": "western",
+      "name": "Claude Fable 5",
+      "vendor": "Anthropic · Jun 9 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 10.0,
+      "output_per_m": 50.0,
+      "aa_blended": 8.5,
+      "aa_index": "#1 ~62",
+      "notes": "No long-ctx surcharge.",
+      "flagged": false,
+      "intel_v41": 60
+    },
+    {
+      "cluster": "western",
+      "name": "Claude Opus 5",
+      "vendor": "Anthropic · Jul 25 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 5.0,
+      "output_per_m": 25.0,
+      "aa_blended": 4.1,
+      "aa_index": "#2 61",
+      "notes": "Half Fable 5 cost; 42/42 on IMO 2026. v4.1 score t.b.v.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Claude Sonnet 5",
+      "vendor": "Anthropic · Jun 30 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 2.46,
+      "aa_index": "52",
+      "notes": "Intro $2/$10 made permanent Aug 10.",
+      "flagged": false,
+      "intel_v41": 53
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-5.6 Sol",
+      "vendor": "OpenAI · Jul 9 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 5.0,
+      "output_per_m": 30.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "New flagship, GA Jul 9. Cache writes 1.25×, 30-min min cache life.",
+      "flagged": true,
+      "intel_v41": 59
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-5.6 Terra",
+      "vendor": "OpenAI · Jul 9 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 12.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Jul 30: −20% price cut. 1M ctx, no surcharge.",
+      "flagged": false,
+      "intel_v41": 55
+    },
+    {
+      "cluster": "western",
+      "name": "Gemini 3.1 Pro",
+      "vendor": "Google",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 12.0,
+      "aa_blended": 1.74,
+      "aa_index": "57",
+      "notes": "Surcharge above 200K ctx.",
+      "flagged": false,
+      "intel_v41": 47
+    },
+    {
+      "cluster": "western",
+      "name": "Gemini 3.7 Flash",
+      "vendor": "Google · Aug 13 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 0.75,
+      "output_per_m": 3.75,
+      "aa_blended": 0.0,
+      "aa_index": "56",
+      "intel_v41": 56,
+      "notes": "Promo price to Jan; 3rd Flash in 2 months. Fastest output measured (385 t/s).",
+      "flagged": true
+    },
+    {
+      "cluster": "western",
+      "name": "Grok 4.5",
+      "vendor": "xAI / SPCX · Jul 8 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "500K",
+      "input_per_m": 2.0,
+      "output_per_m": 6.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Positioned ~Opus 4.7 class, Cursor-trained, agentic focus.",
+      "flagged": true,
+      "intel_v41": 54
+    },
+    {
+      "cluster": "western",
+      "name": "Muse Spark 1.1",
+      "vendor": "Meta · Jul 9 2026",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "—",
+      "input_per_m": 1.25,
+      "output_per_m": 4.25,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Agent-native: built-in primary/subagent orchestration. Speaks OpenAI + Anthropic API formats.",
+      "flagged": true,
+      "intel_v41": 51
+    },
+    {
+      "cluster": "usopen",
+      "name": "Nemotron 3 Ultra",
+      "vendor": "NVIDIA · Jun 4 2026 · OpenMDW",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "nvidia"
+        }
+      ],
+      "architecture": "MoE Mamba hybrid",
+      "active_params": "55B / 550B",
+      "context": "262K",
+      "input_per_m": 0.5,
+      "output_per_m": 2.5,
+      "aa_blended": 0.52,
+      "aa_index": "48",
+      "notes": "API cap 262K. Free tier on OpenRouter.",
+      "flagged": false,
+      "intel_v41": 38
+    },
+    {
+      "cluster": "usopen",
+      "name": "Inkling",
+      "vendor": "Thinking Machines · Jul 15 2026 · Apache 2.0",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "MoE multimodal",
+      "active_params": "41B / 975B",
+      "context": "1M",
+      "input_per_m": 1.87,
+      "output_per_m": 4.68,
+      "aa_blended": 1.1,
+      "aa_index": "41",
+      "notes": "Top US open on AA Index. 64K-ctx rate; 256K tier 2×. +50% price hike from Jul 17. Low verbosity (~1/3 Nemotron tokens).",
+      "flagged": true,
+      "intel_v41": 41
+    },
+    {
+      "cluster": "usopen",
+      "name": "Gemma 4 31B",
+      "vendor": "Google · Apr 2026 · Apache 2.0",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "Dense multimodal",
+      "active_params": "31B",
+      "context": "262K",
+      "input_per_m": 0.12,
+      "output_per_m": 0.36,
+      "aa_blended": 0.13,
+      "aa_index": "~44",
+      "notes": "Self-hostable on 1× H100.",
+      "flagged": false,
+      "intel_v41": 29
+    },
+    {
+      "cluster": "chinese",
+      "name": "Kimi K2.6",
+      "vendor": "Moonshot AI · Apr 2026 · Modified MIT",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "32B / 1T",
+      "context": "256K",
+      "input_per_m": 0.95,
+      "output_per_m": 4.0,
+      "aa_blended": 0.7,
+      "aa_index": "54",
+      "notes": "4× verbosity vs. avg → real ~$7–8/M adj. K3 (2.8T, 1M ctx) launched Jul 16 — no US-hosted rate yet.",
+      "flagged": true,
+      "intel_v41": 44
+    },
+    {
+      "cluster": "chinese",
+      "name": "Kimi K3",
+      "vendor": "Moonshot AI · Jul 16 2026 · weights Jul 27 · Kimi K3 License",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE (LatentMoE 16/896)",
+      "active_params": "~50B / 2.8T",
+      "context": "1M",
+      "input_per_m": 3.0,
+      "output_per_m": 15.0,
+      "aa_blended": 0.0,
+      "aa_index": "60",
+      "notes": "Uniform $3/$15 across US hosts (Fireworks/Together/DeepInfra); Fireworks US-only tier +10%. Always-on reasoning, no long-ctx surcharge. License gates MaaS >$20mn rev.",
+      "estimate": false,
+      "flagged": false,
+      "intel_v41": 60
+    },
+    {
+      "cluster": "chinese",
+      "name": "DeepSeek V4 Pro",
+      "vendor": "DeepSeek · US infra: DeepInfra / Fireworks",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "49B / 1.6T",
+      "context": "1M",
+      "input_per_m": 1.74,
+      "output_per_m": 3.48,
+      "aa_blended": 0.18,
+      "aa_blended_warn": "CN direct",
+      "aa_index": "52",
+      "notes": "Official V4 release mid-Jul; CN API adds peak/off-peak pricing. US-hosted rates unchanged.",
+      "flagged": true,
+      "intel_v41": 44
+    },
+    {
+      "cluster": "chinese",
+      "name": "Qwen3.7 Max",
+      "vendor": "Alibaba · US infra: OpenRouter",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE agentic",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 1.25,
+      "output_per_m": 3.75,
+      "aa_blended": 1.43,
+      "aa_blended_warn": "CN direct",
+      "aa_index": "57",
+      "notes": "Superseded by Qwen3.8 Max (Aug 2) — 3.8 pricing t.b.v., row kept at 3.7 rates.",
+      "flagged": true,
+      "intel_v41": 46
+    },
+    {
+      "cluster": "reference",
+      "name": "DeepSeek V4 Pro (CN direct)",
+      "vendor": "DeepSeek servers · China-hosted",
+      "badges": [],
+      "architecture": "MoE",
+      "active_params": "49B / 1.6T",
+      "context": "1M",
+      "input_per_m": 0.44,
+      "output_per_m": 3.96,
+      "aa_blended": 0.18,
+      "aa_index": "—",
+      "notes": "Aug 16 hike: output $3.96 peak / $1.98 off-peak (was $0.87, ~4×). Input post-hike n.v. Subsidy era closing.",
+      "flagged": true,
+      "intel_v41": 44
+    },
+    {
+      "cluster": "reference",
+      "name": "Kimi K2.6 (CN direct)",
+      "vendor": "Moonshot servers · China-hosted",
+      "badges": [],
+      "architecture": "MoE",
+      "active_params": "32B / 1T",
+      "context": "256K",
+      "input_per_m": 0.95,
+      "output_per_m": 4.0,
+      "aa_blended": 0.7,
+      "aa_index": "—",
+      "notes": "No major Western-hosted option at scale yet.",
+      "flagged": false,
+      "intel_v41": 44
+    }
+  ]
+}
