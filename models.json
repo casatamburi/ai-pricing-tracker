@@ -397,6 +397,22 @@
       "notes": "No major Western-hosted option at scale yet.",
       "flagged": false,
       "intel_v41": 44
+    },
+    {
+      "cluster": "reference",
+      "name": "Kimi K3 (CN direct)",
+      "vendor": "Moonshot servers · China-hosted",
+      "badges": [],
+      "architecture": "MoE (LatentMoE 16/896)",
+      "active_params": "~50B / 2.8T",
+      "context": "1M",
+      "input_per_m": 2.98,
+      "output_per_m": 14.88,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "CN-direct (platform.moonshot.cn): ¥20 fresh / ¥2 cached input, ¥100 output per 1M; USD @6.72 CNY/USD (Aug 2026). Effectively == US-hosted $3/$15 — CN subsidy gone.",
+      "flagged": true,
+      "intel_v41": 60
     }
   ]
 }
