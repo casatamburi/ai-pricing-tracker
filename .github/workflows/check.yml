@@ -87,6 +87,10 @@ jobs:
 
   deploy:
     needs: build
+    # Explicit override required: a skipped job propagates "skipped" transitively
+    # down the whole needs chain, so without this the deploy is silently skipped
+    # on push runs (where `agent` is intentionally skipped) and nothing ships.
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
