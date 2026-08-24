@@ -7,20 +7,38 @@ on:
     # Deliberately off the top of the hour: :00 slots are the most congested on
     # GitHub's shared scheduler and get delayed (or dropped) far more often.
     - cron: "44 6 * * 1"   # every Monday 06:44 UTC = 08:44 CEST (summer) / 07:44 CET (winter)
-  workflow_dispatch: {}     # allow manual run from the Actions tab
+  push:
+    branches: [main]
+    # Publish data edits immediately instead of waiting for the next Monday.
+    # This path runs the deploy only — no API call, no email.
+    paths:
+      - models.json
+      - index.html
+      - logo.b64
+      - render.py
+      - .github/workflows/check.yml
+  workflow_dispatch: {}     # manual run from the Actions tab (also runs the agent)
 
 permissions:
   contents: write           # to commit regenerated files
   pages: write
   id-token: write
 
+# Never let a scheduled run and a push-deploy fight over Pages.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
-  update:
+  # The agent: two LLM passes + merge + email. Skipped on push, so pushing data
+  # never costs an API call or sends mail.
+  agent:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -45,17 +63,34 @@ jobs:
             git push
           fi
 
+  # Build the artifact from whatever is on main now. Runs after the agent on a
+  # scheduled/manual run, and on its own for a push.
+  build:
+    needs: [agent]
+    if: always() && (needs.agent.result == 'success' || needs.agent.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main           # pick up the agent's own commit from this run
+
+      - name: Sanity-check the data before publishing
+        run: |
+          python -c "import json; d=json.load(open('models.json',encoding='utf-8')); \
+            assert d['models'], 'no models'; \
+            print('ok:', len(d['models']), 'models')"
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: .
 
   deploy:
-    needs: update
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

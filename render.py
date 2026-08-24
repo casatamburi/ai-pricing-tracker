@@ -68,9 +68,15 @@ def render(data):
             if m.get("aa_blended_warn"):
                 warn = f' <span class="warn">{html.escape(m["aa_blended_warn"])}</span>'
             is_est = m.get("estimate", False)
-            flag = ' <span class="badge warn">auto · verify</span>' if m.get("flagged") else ""
+            flag = ' <span class="badge warn">auto · sourced</span>' if m.get("flagged") else ""
             if is_est:
                 flag = ' <span class="badge est-badge">PRELIMINARY ESTIMATE</span>' + flag
+            # superseded rows are kept for history, dimmed and labelled — never deleted
+            if m.get("deprecated"):
+                sup_by = m.get("superseded_by", "")
+                label = f"superseded by {sup_by}" if sup_by else "superseded"
+                flag = f' <span class="badge sup-badge">{html.escape(label)}</span>' + flag
+                dimmed = " dimmed"
             hl_cls = "hl dimmed" if cluster == "reference" else "hl"
             aa_idx = m["aa_index"]
             iv = m.get("intel_v41")
@@ -184,6 +190,7 @@ TEMPLATE = """<!DOCTYPE html>
   tr.estimate td.hl {{ background: #331014; border-left: 1px solid #7f1d1d; border-right: 1px solid #7f1d1d; }}
   tr.estimate .hl-val {{ color: #fca5a5; }}
   .est-badge {{ background: #7f1d1d; color: #fecaca; font-size: 8px; }}
+  .sup-badge {{ background: #312e5f; color: #a5b4fc; font-size: 8px; }}
   .note {{ font-size: 10.5px; color: #475569; margin-top: 18px; line-height: 1.8; border-top: 1px solid #1a2030; padding-top: 14px; }}
   .note b {{ color: #64748b; }}
 </style>
@@ -228,7 +235,7 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="note">
   <b>Intel Index v4.1:</b> Artificial Analysis Intelligence Index v4.1 (9 evals incl. GDPval-AA v2, Terminal-Bench v2.1, GPQA Diamond, HLE), verified Jul 16 2026. Single consistent scale across all models — vendor-reported benchmark scores are NOT comparable across labs. n.p. = not yet published on v4.1.<br>
   <b>Blended formula:</b> ({cmin}K cache-miss input × $/M) + ({cin}K cached × {hit}% of $/M) + ({out_k}K output × $/M), per 1M total tokens — computed deterministically.<br>
-  <b>auto · verify</b> badge = qualitative claim added by the weekly agent; confirm before relying on it.
+  <b>auto · sourced</b> badge = row written or last touched by the weekly agent from a cited web source. The pipeline is fully automatic: prices are accepted only with a source URL and inside a plausible envelope ($0.001–500/M), and every change is appended to <code>price_history</code> in models.json. <b>superseded by …</b> = model replaced by a newer one; the row is kept, dimmed, for history.
 </div>
 <div class="note" style="border-top:none;padding-top:6px">Prepared by <b style="color:#94a3b8">Merloni Holding</b> — internal research. Not investment advice.</div>
 </body>
