@@ -2,9 +2,11 @@ name: weekly-token-pricing
 
 on:
   schedule:
-    # 09:00 UTC = 11:00 CEST (summer) / 10:00 CET (winter).
+    # 06:44 UTC = 08:44 CEST (summer) / 07:44 CET (winter).
     # GitHub cron is UTC only and does not follow DST.
-    - cron: "0 9 * * 1"   # every Monday 09:00 UTC = 11:00 CEST (summer) / 10:00 CET (winter)
+    # Deliberately off the top of the hour: :00 slots are the most congested on
+    # GitHub's shared scheduler and get delayed (or dropped) far more often.
+    - cron: "44 6 * * 1"   # every Monday 06:44 UTC = 08:44 CEST (summer) / 07:44 CET (winter)
   workflow_dispatch: {}     # allow manual run from the Actions tab
 
 permissions:

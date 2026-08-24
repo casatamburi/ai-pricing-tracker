@@ -1,6 +1,6 @@
 # Agentic Token Pricing — Auto-Updating Tracker
 
-Fully automated. Every Monday 09:00 UTC the agent searches the web for new model
+Fully automated. Every Monday 06:44 UTC the agent searches the web for new model
 releases / price changes, updates the data, regenerates the page, and emails you
 the link. **Blended costs and bar widths are computed in Python — never by the LLM —**
 so the math is always correct. The LLM only extracts raw facts (names, prices, context).
@@ -54,9 +54,16 @@ Settings → Secrets and variables → Actions → New repository secret. Add:
 - You should get an email within a few minutes and see `index.html` deployed.
 
 ## DST note
-GitHub cron is UTC and ignores daylight saving. `0 9 * * 1` (Monday 09:00 UTC) =
-11:00 in summer (CEST), 10:00 in winter (CET). If you want a fixed local time
-year-round, change the winter months — or just accept the 1-hour seasonal drift.
+GitHub cron is UTC and ignores daylight saving. `44 6 * * 1` (Monday 06:44 UTC) =
+**08:44 in summer (CEST)**, 07:44 in winter (CET). Tuned so the summer slot is
+exactly 08:44 local; the winter run lands an hour earlier. If you want a fixed
+local time year-round you'd need two cron lines gated by month — or just accept
+the 1-hour seasonal drift.
+
+The `:44` is deliberate: GitHub's scheduler is best-effort and the on-the-hour
+(`:00`) slots are heavily congested, so they are frequently delayed by tens of
+minutes and occasionally skipped entirely. An odd minute off the hour is far
+more punctual.
 
 ## Editing manually
 Edit `models.json`, run `python render.py`, commit. Never hand-edit `index.html`.
