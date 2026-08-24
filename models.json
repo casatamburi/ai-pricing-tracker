@@ -87,13 +87,28 @@
       "architecture": "Dense",
       "active_params": "—",
       "context": "1M",
-      "input_per_m": 5.0,
-      "output_per_m": 30.0,
+      "input_per_m": 4.0,
+      "output_per_m": 20.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "New flagship, GA Jul 9. Cache writes 1.25×, 30-min min cache life.",
+      "notes": "GA Jul 9. Aug 21 2026 cut: in $5→$4, out $30→$20, cached $0.50→$0.40 — promo rate guaranteed through Nov 21 2026. >272K ctx tier $8/$30. Cache writes 1.25×, 30-min min cache life.",
       "flagged": true,
-      "intel_v41": 59
+      "intel_v41": 59,
+      "price_history": [
+        {
+          "date": "2026-08-24",
+          "from": {
+            "input_per_m": 5.0,
+            "output_per_m": 30.0
+          },
+          "to": {
+            "input_per_m": 4.0,
+            "output_per_m": 20.0
+          },
+          "source": "https://winbuzzer.com/2026/08/23/openai-cuts-gpt-5-6-sol-api-prices-by-up-to-33-percent-through-november-21-xcxwbn/",
+          "reason": "Aug 21 2026 promotional cut: input -20%, output -33%; guaranteed through Nov 21 2026."
+        }
+      ]
     },
     {
       "cluster": "western",
