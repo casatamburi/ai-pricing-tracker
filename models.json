@@ -342,8 +342,8 @@
     },
     {
       "cluster": "chinese",
-      "name": "Qwen3.7 Max",
-      "vendor": "Alibaba · US infra: OpenRouter",
+      "name": "Qwen3.8 Max",
+      "vendor": "Alibaba · Aug 2 2026 · US infra: OpenRouter",
       "badges": [
         {
           "label": "Open",
@@ -354,17 +354,16 @@
           "type": "chinese"
         }
       ],
-      "architecture": "MoE agentic",
-      "active_params": "—",
+      "architecture": "MoE multimodal",
+      "active_params": "— / 2.4T",
       "context": "1M",
-      "input_per_m": 1.25,
-      "output_per_m": 3.75,
-      "aa_blended": 1.43,
-      "aa_blended_warn": "CN direct",
-      "aa_index": "57",
-      "notes": "Superseded by Qwen3.8 Max (Aug 2) — 3.8 pricing t.b.v., row kept at 3.7 rates.",
+      "input_per_m": 2.0,
+      "output_per_m": 6.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Replaces Qwen3.7 Max. 2.4T MoE flagship; $2/$6 uniform on OpenRouter & Alibaba Intl (Singapore); CN-mainland ~60-70% cheaper. Cache read $0.25/M. Open weights due ~1wk. Intel v4.1 n.p.",
       "flagged": true,
-      "intel_v41": 46
+      "intel_v41": null
     },
     {
       "cluster": "reference",
@@ -374,11 +373,11 @@
       "architecture": "MoE",
       "active_params": "49B / 1.6T",
       "context": "1M",
-      "input_per_m": 0.44,
+      "input_per_m": 1.32,
       "output_per_m": 3.96,
       "aa_blended": 0.18,
       "aa_index": "—",
-      "notes": "Aug 16 hike: output $3.96 peak / $1.98 off-peak (was $0.87, ~4×). Input post-hike n.v. Subsidy era closing.",
+      "notes": "Aug 16 2026 hike (16:00 UTC): input $1.32 peak / $0.66 off-peak (was $0.44); output $3.96 peak / $1.98 off-peak (was $0.87). Cache-hit input up to +1,100% on some tiers. Shown at peak. Subsidy era closing.",
       "flagged": true,
       "intel_v41": 44
     },
