@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-08-23"
+    "last_updated": "2026-08-31"
   },
   "models": [
     {
@@ -48,10 +48,10 @@
       "input_per_m": 5.0,
       "output_per_m": 25.0,
       "aa_blended": 4.1,
-      "aa_index": "#2 61",
-      "notes": "Half Fable 5 cost; 42/42 on IMO 2026. v4.1 score t.b.v.",
+      "aa_index": "63 (max effort) / 61 (headline)",
+      "notes": "Half Fable 5 cost; 42/42 on IMO 2026. Now the AA Intelligence Index leader at 63 (max effort); 61 at headline/max in AA's launch writeup, narrowly ahead of Fable 5 (60) and GPT-5.6 Sol (59).",
       "flagged": true,
-      "intel_v41": null
+      "intel_v41": 63
     },
     {
       "cluster": "western",
@@ -190,9 +190,11 @@
       "output_per_m": 6.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "Positioned ~Opus 4.7 class, Cursor-trained, agentic focus.",
+      "notes": "Positioned ~Opus 4.7 class, Cursor-trained, agentic focus. xAI released Grok 4.6 on Aug 12, 2026 as the new flagship at the same $2/$6 rate ($0.50 cached); Grok 4.5 remains available with a lower $0.30 cached-input rate.",
       "flagged": true,
-      "intel_v41": 54
+      "intel_v41": 54,
+      "superseded_by": "Grok 4.6",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -229,12 +231,27 @@
       "active_params": "55B / 550B",
       "context": "262K",
       "input_per_m": 0.5,
-      "output_per_m": 2.5,
+      "output_per_m": 2.2,
       "aa_blended": 0.52,
       "aa_index": "48",
       "notes": "API cap 262K. Free tier on OpenRouter.",
       "flagged": false,
-      "intel_v41": 38
+      "intel_v41": 38,
+      "price_history": [
+        {
+          "date": "2026-08-31",
+          "from": {
+            "input_per_m": 0.5,
+            "output_per_m": 2.5
+          },
+          "to": {
+            "input_per_m": 0.5,
+            "output_per_m": 2.2
+          },
+          "source": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
+          "reason": "OpenRouter's current US-hosted output rate is $2.20, not the listed $2.50 (input unchanged at $0.50); provider-dependent, AA median differs at $0.60/$2.75."
+        }
+      ]
     },
     {
       "cluster": "usopen",
@@ -270,13 +287,28 @@
       "architecture": "Dense multimodal",
       "active_params": "31B",
       "context": "262K",
-      "input_per_m": 0.12,
-      "output_per_m": 0.36,
+      "input_per_m": 0.08,
+      "output_per_m": 0.34,
       "aa_blended": 0.13,
       "aa_index": "~44",
       "notes": "Self-hostable on 1× H100.",
       "flagged": false,
-      "intel_v41": 29
+      "intel_v41": 29,
+      "price_history": [
+        {
+          "date": "2026-08-31",
+          "from": {
+            "input_per_m": 0.12,
+            "output_per_m": 0.36
+          },
+          "to": {
+            "input_per_m": 0.08,
+            "output_per_m": 0.34
+          },
+          "source": "https://pricepertoken.com/pricing-page/model/google-gemma-4-31b-it",
+          "reason": "Cheapest-provider US-hosted rate has fallen to $0.08/$0.34 (input down ~38% over 90 days); listed $0.12/$0.36 is stale."
+        }
+      ]
     },
     {
       "cluster": "chinese",
@@ -346,14 +378,29 @@
       "architecture": "MoE",
       "active_params": "49B / 1.6T",
       "context": "1M",
-      "input_per_m": 1.74,
-      "output_per_m": 3.48,
+      "input_per_m": 0.792,
+      "output_per_m": 1.74,
       "aa_blended": 0.18,
       "aa_blended_warn": "CN direct",
       "aa_index": "52",
       "notes": "Official V4 release mid-Jul; CN API adds peak/off-peak pricing. US-hosted rates unchanged.",
       "flagged": true,
-      "intel_v41": 44
+      "intel_v41": 44,
+      "price_history": [
+        {
+          "date": "2026-08-31",
+          "from": {
+            "input_per_m": 1.74,
+            "output_per_m": 3.48
+          },
+          "to": {
+            "input_per_m": 0.792,
+            "output_per_m": 1.74
+          },
+          "source": "https://pricepertoken.com/pricing-page/model/deepseek-deepseek-v4-pro",
+          "reason": "US-hosted list is now $0.792/$1.74 (cheapest provider), not the April launch list of $1.74/$3.48; note 'US-hosted rates unchanged' is outdated."
+        }
+      ]
     },
     {
       "cluster": "chinese",
@@ -427,6 +474,56 @@
       "notes": "CN-direct (platform.moonshot.cn): ¥20 fresh / ¥2 cached input, ¥100 output per 1M; USD @6.72 CNY/USD (Aug 2026). Effectively == US-hosted $3/$15 — CN subsidy gone.",
       "flagged": true,
       "intel_v41": 60
+    },
+    {
+      "cluster": "chinese",
+      "name": "GLM-5.3-Flash",
+      "vendor": "Z.ai · 2026-08-26 · MIT",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "18B / 320B",
+      "context": "1M",
+      "input_per_m": 0.15,
+      "output_per_m": 0.5,
+      "aa_blended": 0.0,
+      "aa_index": "57",
+      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halves rates through Sep 9, 2026).",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "Qwen3.8-Flash-Next",
+      "vendor": "Alibaba · 2026-08-26 · Qwen Community 1.0",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "6B / 125B",
+      "context": "262K",
+      "input_per_m": 0.15,
+      "output_per_m": 0.47,
+      "aa_blended": 0.0,
+      "aa_index": "56",
+      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15-0.16/$0.47, native 262K context extensible to 1M via YaRN.",
+      "flagged": false,
+      "intel_v41": null
     }
   ]
 }
