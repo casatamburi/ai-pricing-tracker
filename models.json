@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-08-31"
+    "last_updated": "2026-09-07"
   },
   "models": [
     {
@@ -28,9 +28,11 @@
       "output_per_m": 50.0,
       "aa_blended": 8.5,
       "aa_index": "#1 ~62",
-      "notes": "No long-ctx surcharge.",
+      "notes": "No long-ctx surcharge. Anthropic shipped Fable 5.1 on Sept 1, 2026 as the successor, keeping the same $10/$50 base rate but cutting cache reads 75% from $1.00 to $0.25/M.",
       "flagged": false,
-      "intel_v41": 60
+      "intel_v41": 60,
+      "superseded_by": "Claude Fable 5.1",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -213,9 +215,11 @@
       "output_per_m": 4.25,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "Agent-native: built-in primary/subagent orchestration. Speaks OpenAI + Anthropic API formats.",
+      "notes": "Agent-native: built-in primary/subagent orchestration. Speaks OpenAI + Anthropic API formats. Meta released Muse Spark 1.2 on Aug 5, 2026 (and later 1.3) as the coding-focused successor at the same $1.25/$4.25 standard rate; a $0.10/$0.20 contributor tier is also offered.",
       "flagged": true,
-      "intel_v41": 51
+      "intel_v41": 51,
+      "superseded_by": "Muse Spark 1.2",
+      "deprecated": true
     },
     {
       "cluster": "usopen",
@@ -422,10 +426,10 @@
       "input_per_m": 2.0,
       "output_per_m": 6.0,
       "aa_blended": 0.0,
-      "aa_index": "—",
-      "notes": "Replaces Qwen3.7 Max. 2.4T MoE flagship; $2/$6 uniform on OpenRouter & Alibaba Intl (Singapore); CN-mainland ~60-70% cheaper. Cache read $0.25/M. Open weights due ~1wk. Intel v4.1 n.p.",
+      "aa_index": "56 (Artificial Analysis Intelligence Index, max effort)",
+      "notes": "Replaces Qwen3.7 Max. 2.4T MoE flagship; $2/$6 uniform on OpenRouter & Alibaba Intl (Singapore); CN-mainland ~60-70% cheaper. Cache read $0.25/M. Open weights released. AA Intelligence Index 56 (max effort, after re-run on Alibaba's public API; an earlier run showed 53).",
       "flagged": true,
-      "intel_v41": null
+      "intel_v41": 56
     },
     {
       "cluster": "reference",
@@ -495,10 +499,10 @@
       "input_per_m": 0.15,
       "output_per_m": 0.5,
       "aa_blended": 0.0,
-      "aa_index": "57",
-      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halves rates through Sep 9, 2026).",
-      "flagged": false,
-      "intel_v41": null
+      "aa_index": "57 (Artificial Analysis Intelligence Index v4.1.1, max effort)",
+      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halves rates through Sep 9, 2026). AA Intelligence Index 57 at max reasoning effort.",
+      "flagged": true,
+      "intel_v41": 57
     },
     {
       "cluster": "chinese",
@@ -520,8 +524,113 @@
       "input_per_m": 0.15,
       "output_per_m": 0.47,
       "aa_blended": 0.0,
-      "aa_index": "56",
-      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15-0.16/$0.47, native 262K context extensible to 1M via YaRN.",
+      "aa_index": "56 (Artificial Analysis Intelligence Index)",
+      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15-0.16/$0.47, native 262K context extensible to 1M via YaRN. AA Intelligence Index 56.",
+      "flagged": true,
+      "intel_v41": 56
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-6 Astra",
+      "vendor": "OpenAI · 2026-09-03 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1.05M",
+      "input_per_m": 10.0,
+      "output_per_m": 50.0,
+      "aa_blended": 0.0,
+      "aa_index": "47.8 (Intelligence, pricepertoken)",
+      "notes": "OpenAI flagship; standard $10/$50, requests over 272K input tokens reprice to $20/$75 for the full request.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Claude Fable 5.1",
+      "vendor": "Anthropic · 2026-09-01 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 10.0,
+      "output_per_m": 50.0,
+      "aa_blended": 7.17,
+      "aa_index": "highest on AA Intelligence Index at launch",
+      "notes": "Same base rates as Fable 5; only cache reads changed, cut 75% to $0.25 per 1M tokens.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Gemini 3.8 Flash",
+      "vendor": "Google · 2026-09-02 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 0.75,
+      "output_per_m": 3.75,
+      "aa_blended": 0.0,
+      "aa_index": "59 (AA agentic reasoning)",
+      "notes": "Introductory pricing through Dec 31 2026; standard rate rises to $1.50/$7.50 on Jan 1 2027 per Google docs.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Muse Spark 1.3",
+      "vendor": "Meta · 2026-09-02 · closed (open weights planned)",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 1.25,
+      "output_per_m": 4.25,
+      "aa_blended": 0.0,
+      "aa_index": "61 (AA Intelligence Index, xhigh)",
+      "notes": "Standard tier unchanged from 1.2; a Contributor tier at $0.10/$0.20 requires letting Meta train on your data.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "Qwen3.8 Max (0902)",
+      "vendor": "Alibaba/Qwen · 2026-09-02 · closed (hosted API only)",
+      "badges": [
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "95B / 2.4T",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 6.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Coding/agent-focused post-training snapshot; same price and architecture as Qwen3.8 Max, debuted #1 on Code Arena WebDev.",
       "flagged": false,
       "intel_v41": null
     }
