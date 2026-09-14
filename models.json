@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-09-07"
+    "last_updated": "2026-09-14"
   },
   "models": [
     {
@@ -382,12 +382,12 @@
       "architecture": "MoE",
       "active_params": "49B / 1.6T",
       "context": "1M",
-      "input_per_m": 0.792,
-      "output_per_m": 1.74,
+      "input_per_m": 1.74,
+      "output_per_m": 3.48,
       "aa_blended": 0.18,
       "aa_blended_warn": "CN direct",
       "aa_index": "52",
-      "notes": "Official V4 release mid-Jul; CN API adds peak/off-peak pricing. US-hosted rates unchanged.",
+      "notes": "Official V4 release mid-Jul; CN API adds peak/off-peak pricing. US-hosted rates unchanged. DeepSeek released V4.1 Flash (552B MoE, MIT weights) on Sept 10, 2026, and from 04:00 UTC Sept 14, 2026 all deepseek-v4-pro API requests are routed to V4.1 Flash and billed at Flash rates until a V4.1 Pro launches.",
       "flagged": true,
       "intel_v41": 44,
       "price_history": [
@@ -403,8 +403,23 @@
           },
           "source": "https://pricepertoken.com/pricing-page/model/deepseek-deepseek-v4-pro",
           "reason": "US-hosted list is now $0.792/$1.74 (cheapest provider), not the April launch list of $1.74/$3.48; note 'US-hosted rates unchanged' is outdated."
+        },
+        {
+          "date": "2026-09-14",
+          "from": {
+            "input_per_m": 0.792,
+            "output_per_m": 1.74
+          },
+          "to": {
+            "input_per_m": 1.74,
+            "output_per_m": 3.48
+          },
+          "source": "https://futureagi.com/llm-cost-calculator/fireworks-ai/deepseek-v4-pro/",
+          "reason": "US-hosted V4 Pro on Fireworks and DeepInfra is $1.74 input / $3.48 output per 1M (verified Aug 2026), not the listed $0.792/$1.74; the OpenRouter 'effective' route is separately $0.435/$0.87, so the listed figure matches neither current US-hosted rate."
         }
-      ]
+      ],
+      "superseded_by": "DeepSeek V4.1 Flash",
+      "deprecated": true
     },
     {
       "cluster": "chinese",
@@ -443,9 +458,11 @@
       "output_per_m": 3.96,
       "aa_blended": 0.18,
       "aa_index": "—",
-      "notes": "Aug 16 2026 hike (16:00 UTC): input $1.32 peak / $0.66 off-peak (was $0.44); output $3.96 peak / $1.98 off-peak (was $0.87). Cache-hit input up to +1,100% on some tiers. Shown at peak. Subsidy era closing.",
+      "notes": "Aug 16 2026 hike (16:00 UTC): input $1.32 peak / $0.66 off-peak (was $0.44); output $3.96 peak / $1.98 off-peak (was $0.87). Cache-hit input up to +1,100% on some tiers. Shown at peak. Subsidy era closing. On the CN-direct API the deepseek-v4-pro endpoint is served by V4.1 Flash from Sept 14, 2026 at V4.1 Flash peak/off-peak rates ($0.30/$1.20 peak, $0.15/$0.60 off-peak) until V4.1 Pro ships.",
       "flagged": true,
-      "intel_v41": 44
+      "intel_v41": 44,
+      "superseded_by": "DeepSeek V4.1 Flash",
+      "deprecated": true
     },
     {
       "cluster": "reference",
@@ -524,8 +541,8 @@
       "input_per_m": 0.15,
       "output_per_m": 0.47,
       "aa_blended": 0.0,
-      "aa_index": "56 (Artificial Analysis Intelligence Index)",
-      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15-0.16/$0.47, native 262K context extensible to 1M via YaRN. AA Intelligence Index 56.",
+      "aa_index": "40",
+      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15-0.16/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 (not 56); the model is noted as very verbose (~240M tokens generated on the index).",
       "flagged": true,
       "intel_v41": 56
     },
@@ -631,6 +648,73 @@
       "aa_blended": 0.0,
       "aa_index": "—",
       "notes": "Coding/agent-focused post-training snapshot; same price and architecture as Qwen3.8 Max, debuted #1 on Code Arena WebDev.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "DeepSeek V4.1 Flash",
+      "vendor": "DeepSeek · 2026-09-10 · MIT",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE (Causal Encoder-Decoder)",
+      "active_params": "8B input / 16B output (552B backbone)",
+      "context": "1M",
+      "input_per_m": 0.22,
+      "output_per_m": 0.66,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "MIT-licensed multimodal MoE; US-hosted rate shown is Fireworks ($0.22/$0.66); DeepSeek's own CN-direct API is $0.15/$0.60 off-peak, $0.30/$1.20 peak.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Sakana Fugu Max",
+      "vendor": "Sakana AI · 2026-09-11 · closed (API only)",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Multi-agent orchestrator",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 6.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Cost-tier orchestration model that routes tasks across a pool of open-weight and specialist models; hosted API only, not available in EU/EEA.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Sakana Fugu Ultra v2",
+      "vendor": "Sakana AI · 2026-09-11 · closed (API only)",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Multi-agent orchestrator",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 5.0,
+      "output_per_m": 30.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Capability-tier orchestration model at $5/$30 (rising to $10/$45 above 272K context); hosted API only, not available in EU/EEA.",
       "flagged": false,
       "intel_v41": null
     }
