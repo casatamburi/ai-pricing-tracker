@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-09-14"
+    "last_updated": "2026-09-21"
   },
   "models": [
     {
@@ -215,10 +215,10 @@
       "output_per_m": 4.25,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "Agent-native: built-in primary/subagent orchestration. Speaks OpenAI + Anthropic API formats. Meta released Muse Spark 1.2 on Aug 5, 2026 (and later 1.3) as the coding-focused successor at the same $1.25/$4.25 standard rate; a $0.10/$0.20 contributor tier is also offered.",
+      "notes": "Agent-native: built-in primary/subagent orchestration. Speaks OpenAI + Anthropic API formats. Meta released Muse Spark 1.2 on Aug 5, 2026 (and later 1.3) as the coding-focused successor at the same $1.25/$4.25 standard rate; a $0.10/$0.20 contributor tier is also offered. Meta released Muse Spark 1.2 (Aug 2026) and then 1.3 (Sept 2, 2026) as coding-focused successors at the same $1.25/$4.25 standard rate, plus a $0.10/$0.20 contributor tier.",
       "flagged": true,
       "intel_v41": 51,
-      "superseded_by": "Muse Spark 1.2",
+      "superseded_by": "Muse Spark 1.3",
       "deprecated": true
     },
     {
@@ -541,8 +541,8 @@
       "input_per_m": 0.15,
       "output_per_m": 0.47,
       "aa_blended": 0.0,
-      "aa_index": "40",
-      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15-0.16/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 (not 56); the model is noted as very verbose (~240M tokens generated on the index).",
+      "aa_index": "40 (Artificial Analysis Intelligence Index)",
+      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 (not 56); noted as very verbose.",
       "flagged": true,
       "intel_v41": 56
     },
@@ -562,9 +562,9 @@
       "input_per_m": 10.0,
       "output_per_m": 50.0,
       "aa_blended": 0.0,
-      "aa_index": "47.8 (Intelligence, pricepertoken)",
-      "notes": "OpenAI flagship; standard $10/$50, requests over 272K input tokens reprice to $20/$75 for the full request.",
-      "flagged": false,
+      "aa_index": "61 (Artificial Analysis Intelligence Index, tied with GPT-5.6 Sol; behind Claude Fable 5.1)",
+      "notes": "OpenAI flagship, released Sept 3, 2026; standard $10/$50, requests over 272K input tokens reprice to $20/$75 for the full request. Artificial Analysis Intelligence Index 61 (tied with GPT-5.6 Sol).",
+      "flagged": true,
       "intel_v41": null
     },
     {
