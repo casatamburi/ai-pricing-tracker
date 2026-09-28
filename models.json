@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-09-21"
+    "last_updated": "2026-09-28"
   },
   "models": [
     {
@@ -51,9 +51,11 @@
       "output_per_m": 25.0,
       "aa_blended": 4.1,
       "aa_index": "63 (max effort) / 61 (headline)",
-      "notes": "Half Fable 5 cost; 42/42 on IMO 2026. Now the AA Intelligence Index leader at 63 (max effort); 61 at headline/max in AA's launch writeup, narrowly ahead of Fable 5 (60) and GPT-5.6 Sol (59).",
+      "notes": "Half Fable 5 cost; 42/42 on IMO 2026. Now the AA Intelligence Index leader at 63 (max effort); 61 at headline/max in AA's launch writeup, narrowly ahead of Fable 5 (60) and GPT-5.6 Sol (59). Anthropic shipped Opus 5.5 (documented Sept 22, 2026) as the new flagship Opus tier at $4/$20 with $0.20/M cache reads, undercutting Opus 5's $5/$25.",
       "flagged": true,
-      "intel_v41": 63
+      "intel_v41": 63,
+      "superseded_by": "Claude Opus 5.5",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -192,10 +194,10 @@
       "output_per_m": 6.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "Positioned ~Opus 4.7 class, Cursor-trained, agentic focus. xAI released Grok 4.6 on Aug 12, 2026 as the new flagship at the same $2/$6 rate ($0.50 cached); Grok 4.5 remains available with a lower $0.30 cached-input rate.",
+      "notes": "Positioned ~Opus 4.7 class, Cursor-trained, agentic focus. xAI released Grok 4.6 on Aug 12, 2026 as the new flagship at the same $2/$6 rate ($0.50 cached); Grok 4.5 remains available with a lower $0.30 cached-input rate. xAI released Grok 4.7 as the new flagship at $2/$6 ($0.50 cached), superseding the Grok 4.6 that had replaced Grok 4.5; Grok 4.5 remains listed at $2/$6 with $0.30 cached.",
       "flagged": true,
       "intel_v41": 54,
-      "superseded_by": "Grok 4.6",
+      "superseded_by": "Grok 4.7",
       "deprecated": true
     },
     {
@@ -562,10 +564,10 @@
       "input_per_m": 10.0,
       "output_per_m": 50.0,
       "aa_blended": 0.0,
-      "aa_index": "61 (Artificial Analysis Intelligence Index, tied with GPT-5.6 Sol; behind Claude Fable 5.1)",
-      "notes": "OpenAI flagship, released Sept 3, 2026; standard $10/$50, requests over 272K input tokens reprice to $20/$75 for the full request. Artificial Analysis Intelligence Index 61 (tied with GPT-5.6 Sol).",
+      "aa_index": "AA Intelligence Index 53 (max, v4.3.2); ties Fable 5.1 per AA launch writeup",
+      "notes": "OpenAI flagship, released Sept 3, 2026; standard $10/$50, cached input $1.00, cache writes 25% premium. Long-context/large-request repricing per OpenAI. Artificial Analysis Intelligence Index 53 at max reasoning effort (v4.3.2); AA's launch writeup states Astra ties Claude Fable 5.1 in the Intelligence Index at ~40% of the cost per task, 6 points ahead of GPT-5.6 Sol.",
       "flagged": true,
-      "intel_v41": null
+      "intel_v41": 53
     },
     {
       "cluster": "western",
@@ -647,9 +649,11 @@
       "output_per_m": 6.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "Coding/agent-focused post-training snapshot; same price and architecture as Qwen3.8 Max, debuted #1 on Code Arena WebDev.",
+      "notes": "Coding/agent-focused post-training snapshot; same price and architecture as Qwen3.8 Max, debuted #1 on Code Arena WebDev. Alibaba released Qwen3.8 Max Prime on Sept 23, 2026 as a higher-throughput SKU at $4/$12 ($0.50 cache read); the 0902 snapshot remains at $2/$6 with $0.25 cache read.",
       "flagged": false,
-      "intel_v41": null
+      "intel_v41": null,
+      "superseded_by": "Qwen3.8 Max Prime",
+      "deprecated": true
     },
     {
       "cluster": "chinese",
@@ -715,6 +719,140 @@
       "aa_blended": 0.0,
       "aa_index": "—",
       "notes": "Capability-tier orchestration model at $5/$30 (rising to $10/$45 above 272K context); hosted API only, not available in EU/EEA.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-6 Sol",
+      "vendor": "OpenAI · 2026-09-22 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1.05M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "OpenAI set GPT-6 Sol at $2/$10 per 1M tokens, half GPT-5.6 Sol's rate, with cached input at $0.20; confirmed as permanent, not promotional, pricing.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-6 Luna",
+      "vendor": "OpenAI · 2026-09-22 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1.05M",
+      "input_per_m": 0.1,
+      "output_per_m": 0.5,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "GPT-6 Luna is priced at $0.10/$0.50 per 1M tokens (cached input $0.01), a high-volume tier for extraction and summarization tasks.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Claude Opus 5.5",
+      "vendor": "Anthropic · 2026-09-22 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 4.0,
+      "output_per_m": 20.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Anthropic priced Opus 5.5 at $4/$20 per 1M tokens (20% below Opus 5's $5/$25) with cache reads cut 60% to $0.20/M.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Grok 4.7",
+      "vendor": "xAI · 2026-09-21 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "500K",
+      "input_per_m": 2.0,
+      "output_per_m": 6.0,
+      "aa_blended": 0.0,
+      "aa_index": "46",
+      "notes": "xAI priced Grok 4.7 at $2/$6 per 1M tokens (cached input $0.50) for prompts under 200K; prompts at/over 200K bill at $4/$12.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "MiMo-V2.6-Pro",
+      "vendor": "Xiaomi · 2026-09-21 · MIT (open)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "42B / 1.02T",
+      "context": "1M",
+      "input_per_m": 0.435,
+      "output_per_m": 0.87,
+      "aa_blended": 0.0,
+      "aa_index": "46",
+      "notes": "Xiaomi open-sourced MiMo-V2.6-Pro under MIT, a 1.02T-param MoE with 42B active, priced at $0.435/$0.87 per 1M tokens on its hosted API.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "MiMo-V2.6-Flash",
+      "vendor": "Xiaomi · 2026-09-21 · MIT (open)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "15B / 309B",
+      "context": "1M",
+      "input_per_m": 0.14,
+      "output_per_m": 0.28,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "MiMo-V2.6-Flash is an MIT-licensed 309B-param MoE (15B active) with a 1M context, priced at $0.14/$0.28 per 1M tokens on Xiaomi's API and OpenRouter.",
       "flagged": false,
       "intel_v41": null
     }
