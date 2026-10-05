@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-09-28"
+    "last_updated": "2026-10-05"
   },
   "models": [
     {
@@ -854,6 +854,69 @@
       "aa_index": "—",
       "notes": "MiMo-V2.6-Flash is an MIT-licensed 309B-param MoE (15B active) with a 1M context, priced at $0.14/$0.28 per 1M tokens on Xiaomi's API and OpenRouter.",
       "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-6.1 Sol",
+      "vendor": "OpenAI · 2026-09-29 · proprietary",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1.05M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 0.0,
+      "aa_index": "AA-Omniscience 42",
+      "notes": "Released at DevDay 2026; OpenAI lists $2/$10 standard with $0.10 cached input, positioned as near-Astra at one-fifth of Astra's price.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Claude Sonnet 5.5",
+      "vendor": "Anthropic · 2026-09-28 · proprietary",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Second model in the Claude 5.5 family at unchanged Sonnet 5 pricing ($2/$10, $0.20 cache read); Anthropic cites 70.6% on Terminal-Bench 4.0.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Gemini 4 Argon",
+      "vendor": "Google DeepMind · 2026-09-30 · proprietary",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 0.0,
+      "aa_index": "AA-Omniscience 42",
+      "notes": "Introductory API rate $2/$10 (standard $4/$20, 95% cache discount); access limited to Fairwind cyber-defender partners at launch, no general availability date.",
+      "flagged": true,
       "intel_v41": null
     }
   ]
