@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-10-05"
+    "last_updated": "2026-10-12"
   },
   "models": [
     {
@@ -74,9 +74,11 @@
       "output_per_m": 10.0,
       "aa_blended": 2.46,
       "aa_index": "52",
-      "notes": "Intro $2/$10 made permanent Aug 10.",
+      "notes": "Intro $2/$10 made permanent Aug 10. Anthropic released Sonnet 5.5 on Sept 28, 2026 at unchanged $2/$10 ($0.20 cache read), citing 70.6% on Terminal-Bench 4.0.",
       "flagged": false,
-      "intel_v41": 53
+      "intel_v41": 53,
+      "superseded_by": "Claude Sonnet 5.5",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -337,9 +339,11 @@
       "output_per_m": 4.0,
       "aa_blended": 0.7,
       "aa_index": "54",
-      "notes": "4× verbosity vs. avg → real ~$7–8/M adj. K3 (2.8T, 1M ctx) launched Jul 16 — no US-hosted rate yet.",
+      "notes": "4× verbosity vs. avg → real ~$7–8/M adj. K3 (2.8T, 1M ctx) launched Jul 16 — no US-hosted rate yet. Moonshot launched Kimi K3 (2.8T, 1M ctx) on July 16, 2026, now US-hosted at $3/$15; K2.6 remains the cheaper tier at $0.95/$4.00.",
       "flagged": true,
-      "intel_v41": 44
+      "intel_v41": 44,
+      "superseded_by": "Kimi K3",
+      "deprecated": true
     },
     {
       "cluster": "chinese",
@@ -389,7 +393,7 @@
       "aa_blended": 0.18,
       "aa_blended_warn": "CN direct",
       "aa_index": "52",
-      "notes": "Official V4 release mid-Jul; CN API adds peak/off-peak pricing. US-hosted rates unchanged. DeepSeek released V4.1 Flash (552B MoE, MIT weights) on Sept 10, 2026, and from 04:00 UTC Sept 14, 2026 all deepseek-v4-pro API requests are routed to V4.1 Flash and billed at Flash rates until a V4.1 Pro launches.",
+      "notes": "Official V4 release mid-Jul; CN API adds peak/off-peak pricing. US-hosted rates unchanged. DeepSeek released V4.1 Flash (552B MoE, MIT weights) on Sept 10, 2026, and announced routing of deepseek-v4-pro to V4.1 Flash from Sept 14 — but that routing was REVERSED before taking effect; V4 Pro continues on the API at its own unchanged rates until a V4.1 Pro ships.",
       "flagged": true,
       "intel_v41": 44,
       "price_history": [
@@ -460,7 +464,7 @@
       "output_per_m": 3.96,
       "aa_blended": 0.18,
       "aa_index": "—",
-      "notes": "Aug 16 2026 hike (16:00 UTC): input $1.32 peak / $0.66 off-peak (was $0.44); output $3.96 peak / $1.98 off-peak (was $0.87). Cache-hit input up to +1,100% on some tiers. Shown at peak. Subsidy era closing. On the CN-direct API the deepseek-v4-pro endpoint is served by V4.1 Flash from Sept 14, 2026 at V4.1 Flash peak/off-peak rates ($0.30/$1.20 peak, $0.15/$0.60 off-peak) until V4.1 Pro ships.",
+      "notes": "Aug 16 2026 hike (16:00 UTC): input $1.32 peak / $0.66 off-peak; output $3.96 peak / $1.98 off-peak. Shown at peak. The announced Sept 14 routing of the deepseek-v4-pro endpoint to V4.1 Flash was REVERSED before it took effect; the endpoint continues to serve V4 Pro at its existing peak/off-peak rates ($1.32/$3.96 peak) until a V4.1 Pro launches.",
       "flagged": true,
       "intel_v41": 44,
       "superseded_by": "DeepSeek V4.1 Flash",
@@ -518,8 +522,8 @@
       "input_per_m": 0.15,
       "output_per_m": 0.5,
       "aa_blended": 0.0,
-      "aa_index": "57 (Artificial Analysis Intelligence Index v4.1.1, max effort)",
-      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halves rates through Sep 9, 2026). AA Intelligence Index 57 at max reasoning effort.",
+      "aa_index": "57",
+      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halved rates through Sep 9, 2026, now expired). AA Intelligence Index 57 at max reasoning effort.",
       "flagged": true,
       "intel_v41": 57
     },
@@ -543,8 +547,8 @@
       "input_per_m": 0.15,
       "output_per_m": 0.47,
       "aa_blended": 0.0,
-      "aa_index": "40 (Artificial Analysis Intelligence Index)",
-      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 (not 56); noted as very verbose.",
+      "aa_index": "40",
+      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 (confirmed, not 56); flagged as very verbose (240M output tokens on the Index run).",
       "flagged": true,
       "intel_v41": 56
     },
@@ -564,8 +568,8 @@
       "input_per_m": 10.0,
       "output_per_m": 50.0,
       "aa_blended": 0.0,
-      "aa_index": "AA Intelligence Index 53 (max, v4.3.2); ties Fable 5.1 per AA launch writeup",
-      "notes": "OpenAI flagship, released Sept 3, 2026; standard $10/$50, cached input $1.00, cache writes 25% premium. Long-context/large-request repricing per OpenAI. Artificial Analysis Intelligence Index 53 at max reasoning effort (v4.3.2); AA's launch writeup states Astra ties Claude Fable 5.1 in the Intelligence Index at ~40% of the cost per task, 6 points ahead of GPT-5.6 Sol.",
+      "aa_index": "53 (max, v4.3.2)",
+      "notes": "OpenAI flagship, released Sept 3, 2026; standard $10/$50, cached input $1.00, cache writes $12.50. Long-context (>272K) reprices to $20/$75. Artificial Analysis Intelligence Index 53 at max reasoning effort (v4.3.2).",
       "flagged": true,
       "intel_v41": 53
     },
@@ -586,8 +590,8 @@
       "output_per_m": 50.0,
       "aa_blended": 7.17,
       "aa_index": "highest on AA Intelligence Index at launch",
-      "notes": "Same base rates as Fable 5; only cache reads changed, cut 75% to $0.25 per 1M tokens.",
-      "flagged": false,
+      "notes": "Same base rates as Fable 5 ($10/$50); only cache reads changed, cut 75% to $0.25 per 1M tokens. Confirmed current on Anthropic's pricing page.",
+      "flagged": true,
       "intel_v41": null
     },
     {
@@ -607,8 +611,8 @@
       "output_per_m": 3.75,
       "aa_blended": 0.0,
       "aa_index": "59 (AA agentic reasoning)",
-      "notes": "Introductory pricing through Dec 31 2026; standard rate rises to $1.50/$7.50 on Jan 1 2027 per Google docs.",
-      "flagged": false,
+      "notes": "Introductory pricing $0.75/$3.75 through Dec 31 2026; standard rate rises to $1.50/$7.50 on Jan 1 2027 per Google docs. Confirmed current.",
+      "flagged": true,
       "intel_v41": null
     },
     {
@@ -627,9 +631,9 @@
       "input_per_m": 1.25,
       "output_per_m": 4.25,
       "aa_blended": 0.0,
-      "aa_index": "61 (AA Intelligence Index, xhigh)",
-      "notes": "Standard tier unchanged from 1.2; a Contributor tier at $0.10/$0.20 requires letting Meta train on your data.",
-      "flagged": false,
+      "aa_index": "48.09 (Max, v4.3.2)",
+      "notes": "Standard tier unchanged from 1.2 at $1.25/$4.25 ($0.15 cache); a Contributor tier at $0.10/$0.20 requires letting Meta train on your data. AA Intelligence Index 48.09 (Max, v4.3.2).",
+      "flagged": true,
       "intel_v41": null
     },
     {
@@ -648,9 +652,9 @@
       "input_per_m": 2.0,
       "output_per_m": 6.0,
       "aa_blended": 0.0,
-      "aa_index": "—",
-      "notes": "Coding/agent-focused post-training snapshot; same price and architecture as Qwen3.8 Max, debuted #1 on Code Arena WebDev. Alibaba released Qwen3.8 Max Prime on Sept 23, 2026 as a higher-throughput SKU at $4/$12 ($0.50 cache read); the 0902 snapshot remains at $2/$6 with $0.25 cache read.",
-      "flagged": false,
+      "aa_index": "45.42 (v4.3.2)",
+      "notes": "Coding/agent-focused post-training snapshot; same $2/$6 price ($0.25 cache read) and architecture as Qwen3.8 Max. Alibaba added Qwen3.8 Max Prime on Sept 23, 2026 as a higher-throughput SKU at $4/$12 ($0.50 cache); the 0902 snapshot remains at $2/$6.",
+      "flagged": true,
       "intel_v41": null,
       "superseded_by": "Qwen3.8 Max Prime",
       "deprecated": true
@@ -916,6 +920,90 @@
       "aa_blended": 0.0,
       "aa_index": "AA-Omniscience 42",
       "notes": "Introductory API rate $2/$10 (standard $4/$20, 95% cache discount); access limited to Fairwind cyber-defender partners at launch, no general availability date.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Claude Haiku 5.5",
+      "vendor": "Anthropic · 2026-10-07 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 0.1,
+      "output_per_m": 0.5,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Prices shown are the standard tier for prompts up to 100K tokens; above 100K every rate is 5x ($0.50 input / $2.50 output).",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Mistral Large 4",
+      "vendor": "Mistral · 2026-10-06 · open weights promised late Oct (license TBD)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "49B / 1.05T total",
+      "context": "1M",
+      "input_per_m": 1.36,
+      "output_per_m": 4.18,
+      "aa_blended": 0.0,
+      "aa_index": "38",
+      "notes": "List price is $1.36/$4.18; Mistral's model card also shows a half-price preview promo ($0.68/$2.09) with no published end date.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "GLM 5.3 Fast",
+      "vendor": "Z.ai · 2026-10-07 · closed (weights planned)",
+      "badges": [
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 0.15,
+      "output_per_m": 0.5,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Fast/small tier of GLM-5.3 at Z.ai's listed $0.15/$0.50 (flash-class rate); third-party hosts quote higher.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Reka Edge 2603",
+      "vendor": "Reka · 2026-10-09 · open (custom license, <$1M revenue)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "7B",
+      "context": "16K",
+      "input_per_m": 0.1,
+      "output_per_m": 0.1,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "7B multimodal vision-language model; weights open under a custom license limiting commercial use to firms under $1M annual revenue.",
       "flagged": true,
       "intel_v41": null
     }
