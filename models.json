@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-10-12"
+    "last_updated": "2026-10-19"
   },
   "models": [
     {
@@ -97,7 +97,7 @@
       "output_per_m": 20.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "GA Jul 9. Aug 21 2026 cut: in $5→$4, out $30→$20, cached $0.50→$0.40 — promo rate guaranteed through Nov 21 2026. >272K ctx tier $8/$30. Cache writes 1.25×, 30-min min cache life.",
+      "notes": "GA Jul 9. Aug 21 2026 cut: in $5→$4, out $30→$20, cached $0.50→$0.40 — promo rate guaranteed through Nov 21 2026. >272K ctx tier $8/$30. Cache writes 1.25×, 30-min min cache life. OpenAI's GPT-6 line (GPT-6 Sol, then GPT-6.1 Sol at DevDay Sept 29, 2026) supersedes GPT-5.6 Sol at $2/$10, half the price; GPT-5.6 Sol remains available at its $4/$20 promo rate.",
       "flagged": true,
       "intel_v41": 59,
       "price_history": [
@@ -114,7 +114,9 @@
           "source": "https://winbuzzer.com/2026/08/23/openai-cuts-gpt-5-6-sol-api-prices-by-up-to-33-percent-through-november-21-xcxwbn/",
           "reason": "Aug 21 2026 promotional cut: input -20%, output -33%; guaranteed through Nov 21 2026."
         }
-      ]
+      ],
+      "superseded_by": "GPT-6.1 Sol",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -448,9 +450,11 @@
       "output_per_m": 6.0,
       "aa_blended": 0.0,
       "aa_index": "56 (Artificial Analysis Intelligence Index, max effort)",
-      "notes": "Replaces Qwen3.7 Max. 2.4T MoE flagship; $2/$6 uniform on OpenRouter & Alibaba Intl (Singapore); CN-mainland ~60-70% cheaper. Cache read $0.25/M. Open weights released. AA Intelligence Index 56 (max effort, after re-run on Alibaba's public API; an earlier run showed 53).",
+      "notes": "Replaces Qwen3.7 Max. 2.4T MoE flagship; $2/$6 uniform on OpenRouter & Alibaba Intl (Singapore); CN-mainland ~60-70% cheaper. Cache read $0.25/M. Open weights released. AA Intelligence Index 56 (max effort, after re-run on Alibaba's public API; an earlier run showed 53). Alibaba added Qwen3.8 Max Prime (Sept 23, 2026) as a higher-throughput SKU at $4/$12 ($0.50 cache); standard Qwen3.8 Max and the 0902 snapshot stay at $2/$6.",
       "flagged": true,
-      "intel_v41": 56
+      "intel_v41": 56,
+      "superseded_by": "Qwen3.8 Max Prime",
+      "deprecated": true
     },
     {
       "cluster": "reference",
@@ -522,10 +526,10 @@
       "input_per_m": 0.15,
       "output_per_m": 0.5,
       "aa_blended": 0.0,
-      "aa_index": "57",
-      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halved rates through Sep 9, 2026, now expired). AA Intelligence Index 57 at max reasoning effort.",
+      "aa_index": "42 (AA Intelligence Index v4.3.2)",
+      "notes": "First natively multimodal GLM-5 model; MIT weights on Hugging Face, standard Z.AI list price $0.15/$0.50 (launch promo halving rates through Sep 9, 2026, now expired). AA Intelligence Index is ~42 on current v4.3.2 (the listed intel_v41=57 was the older v4.1.1 score).",
       "flagged": true,
-      "intel_v41": 57
+      "intel_v41": 42
     },
     {
       "cluster": "chinese",
@@ -547,10 +551,10 @@
       "input_per_m": 0.15,
       "output_per_m": 0.47,
       "aa_blended": 0.0,
-      "aa_index": "40",
-      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 (confirmed, not 56); flagged as very verbose (240M output tokens on the Index run).",
+      "aa_index": "40 (AA Intelligence Index v4.3.2)",
+      "notes": "Open-weight preview of the Qwen4 architecture; QwenCloud production SKU (qwen3.8-flash) priced at $0.15/$0.47, native 262K context extensible to 1M via YaRN. Artificial Analysis Intelligence Index is 40 on current v4.3.2 (the listed intel_v41=56 was the older v4.1.1 score); flagged as very verbose (240M output tokens on the Index run).",
       "flagged": true,
-      "intel_v41": 56
+      "intel_v41": 40
     },
     {
       "cluster": "western",
@@ -631,7 +635,7 @@
       "input_per_m": 1.25,
       "output_per_m": 4.25,
       "aa_blended": 0.0,
-      "aa_index": "48.09 (Max, v4.3.2)",
+      "aa_index": "48.09 (Max, AA Intelligence Index v4.3.2)",
       "notes": "Standard tier unchanged from 1.2 at $1.25/$4.25 ($0.15 cache); a Contributor tier at $0.10/$0.20 requires letting Meta train on your data. AA Intelligence Index 48.09 (Max, v4.3.2).",
       "flagged": true,
       "intel_v41": null
@@ -1004,6 +1008,94 @@
       "aa_blended": 0.0,
       "aa_index": "—",
       "notes": "7B multimodal vision-language model; weights open under a custom license limiting commercial use to firms under $1M annual revenue.",
+      "flagged": true,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "vendor": "DeepSeek · Oct 17, 2026 · MIT (open weights)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "16B / 552B",
+      "context": "1M",
+      "input_per_m": 0.3,
+      "output_per_m": 1.2,
+      "aa_blended": 0.0,
+      "aa_index": "39.5",
+      "notes": "October 17 refresh of V4.1 Flash; DeepSeek's first-party peak API rate ($0.15/$0.60 off-peak), open MIT weights on Hugging Face.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Muse Wonder 1.0",
+      "vendor": "Meta · Oct 12, 2026 · proprietary",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 4.0,
+      "output_per_m": 20.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Meta Superintelligence Labs' first frontier model on the Meta Model API; cached input $0.20, same card as Claude Opus 5.5.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "usopen",
+      "name": "Muse Spark Open",
+      "vendor": "Meta · Oct 15, 2026 · Muse Model License (open weights)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "42B / 816B",
+      "context": "1M",
+      "input_per_m": 1.25,
+      "output_per_m": 4.25,
+      "aa_blended": 0.0,
+      "aa_index": "39",
+      "notes": "Meta's open-weight multimodal MoE; US-hosted providers (Baseten, Fireworks, Together, etc.) converged on $1.25/$4.25 with $0.15 cached.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "usopen",
+      "name": "Beam 1.0 501B A23B",
+      "vendor": "Reflection · Oct 16, 2026 · Apache 2.0 (open weights)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "23B / 501B",
+      "context": "1M",
+      "input_per_m": 1.0,
+      "output_per_m": 3.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Reflection's first open-weight model for coding/agentic work; US-hosted pricing varies widely (OpenRouter $1.00/$3.00; Together/Kilo list $0.25/$1.00).",
       "flagged": true,
       "intel_v41": null
     }
