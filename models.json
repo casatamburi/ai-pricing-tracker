@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-10-19"
+    "last_updated": "2026-10-26"
   },
   "models": [
     {
@@ -97,7 +97,7 @@
       "output_per_m": 20.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "GA Jul 9. Aug 21 2026 cut: in $5→$4, out $30→$20, cached $0.50→$0.40 — promo rate guaranteed through Nov 21 2026. >272K ctx tier $8/$30. Cache writes 1.25×, 30-min min cache life. OpenAI's GPT-6 line (GPT-6 Sol, then GPT-6.1 Sol at DevDay Sept 29, 2026) supersedes GPT-5.6 Sol at $2/$10, half the price; GPT-5.6 Sol remains available at its $4/$20 promo rate.",
+      "notes": "GA Jul 9. Aug 21 2026 cut: in $5→$4, out $30→$20, cached $0.50→$0.40 — promo rate guaranteed through Nov 21 2026. >272K ctx tier $8/$30. Cache writes 1.25×, 30-min min cache life. OpenAI's GPT-6 line (GPT-6 Sol, then GPT-6.1 Sol at DevDay Sept 29, 2026) supersedes GPT-5.6 Sol at $2/$10, half the price; GPT-5.6 Sol remains available at its $4/$20 promo rate. OpenAI's GPT-6 Sol (Sept 22) and GPT-6.1 Sol (DevDay Sept 29, 2026) supersede GPT-5.6 Sol at $2/$10, half the price; GPT-5.6 Sol stays available at its $4/$20 promo through Nov 21, 2026.",
       "flagged": true,
       "intel_v41": 59,
       "price_history": [
@@ -115,7 +115,7 @@
           "reason": "Aug 21 2026 promotional cut: input -20%, output -33%; guaranteed through Nov 21 2026."
         }
       ],
-      "superseded_by": "GPT-6.1 Sol",
+      "superseded_by": "GPT-6 Sol / GPT-6.1 Sol",
       "deprecated": true
     },
     {
@@ -135,9 +135,11 @@
       "output_per_m": 12.0,
       "aa_blended": 0.0,
       "aa_index": "—",
-      "notes": "Jul 30: −20% price cut. 1M ctx, no surcharge.",
+      "notes": "Jul 30: −20% price cut. 1M ctx, no surcharge. In OpenAI's own generational mapping GPT-6 Sol ($2/$10) is positioned as the successor to GPT-5.6 Terra ($2/$12).",
       "flagged": false,
-      "intel_v41": 55
+      "intel_v41": 55,
+      "superseded_by": "GPT-6 Sol",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -156,9 +158,11 @@
       "output_per_m": 12.0,
       "aa_blended": 1.74,
       "aa_index": "57",
-      "notes": "Surcharge above 200K ctx.",
+      "notes": "Surcharge above 200K ctx. Google announced Gemini 4 Argon (GA Oct 13, 2026) as the new flagship above Gemini 3.1 Pro, at an introductory $2/$10 (rising to $4/$20 Dec 1, 2026); Gemini 3.1 Pro remains at $2/$12.",
       "flagged": false,
-      "intel_v41": 47
+      "intel_v41": 47,
+      "superseded_by": "Gemini 4 Argon",
+      "deprecated": true
     },
     {
       "cluster": "western",
@@ -1091,12 +1095,102 @@
       "architecture": "MoE",
       "active_params": "23B / 501B",
       "context": "1M",
-      "input_per_m": 1.0,
-      "output_per_m": 3.0,
+      "input_per_m": 0.25,
+      "output_per_m": 1.0,
       "aa_blended": 0.0,
       "aa_index": "—",
       "notes": "Reflection's first open-weight model for coding/agentic work; US-hosted pricing varies widely (OpenRouter $1.00/$3.00; Together/Kilo list $0.25/$1.00).",
       "flagged": true,
+      "intel_v41": null,
+      "price_history": [
+        {
+          "date": "2026-10-26",
+          "from": {
+            "input_per_m": 1.0,
+            "output_per_m": 3.0
+          },
+          "to": {
+            "input_per_m": 0.25,
+            "output_per_m": 1.0
+          },
+          "source": "https://models.dev/models/reflection/beam-1.0-501b-a23b/",
+          "reason": "OpenRouter's default-routed Beam 1.0 lists at $0.25/$1.00 per 1M (Oct 2026), not the $1.00/$3.00 shown in the row; CoreWeave default is $0.30/$1.00 and Together $0.40/$1.20."
+        }
+      ]
+    },
+    {
+      "cluster": "chinese",
+      "name": "Kimi K3.1 Pro",
+      "vendor": "Moonshot AI · Oct 23, 2026 · open weights promised Nov 4, 2026 (license unnamed)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "104B active / 2.8T total",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Moonshot API lists $2/$10 per 1M with $0.20/M cache read, a third below Kimi K3's $3/$15.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "Kimi K3.1 Pro Highspeed",
+      "vendor": "Moonshot AI · Oct 23, 2026 · open weights promised Nov 4, 2026 (license unnamed)",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "104B active / 2.8T total",
+      "context": "1M",
+      "input_per_m": 4.0,
+      "output_per_m": 20.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Faster variant of K3.1 Pro at $4/$20 per 1M with $0.20/M cache read, running 2-3x quicker at double the rate.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "MiniMax M3.1 Flash",
+      "vendor": "MiniMax · Oct 19, 2026 · open weights",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        },
+        {
+          "label": "CN",
+          "type": "chinese"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 0.15,
+      "output_per_m": 0.6,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "MiniMax list price is flat $0.15/$0.60 per 1M with $0.015/M cached input at any context length; free launch period ended Oct 22.",
+      "flagged": false,
       "intel_v41": null
     }
   ]
