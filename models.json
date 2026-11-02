@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-10-26"
+    "last_updated": "2026-11-02"
   },
   "models": [
     {
@@ -372,10 +372,12 @@
       "output_per_m": 15.0,
       "aa_blended": 0.0,
       "aa_index": "60",
-      "notes": "Uniform $3/$15 across US hosts (Fireworks/Together/DeepInfra); Fireworks US-only tier +10%. Always-on reasoning, no long-ctx surcharge. License gates MaaS >$20mn rev.",
+      "notes": "Uniform $3/$15 across US hosts (Fireworks/Together/DeepInfra); Fireworks US-only tier +10%. Always-on reasoning, no long-ctx surcharge. License gates MaaS >$20mn rev. Moonshot released Kimi K3.1 Pro on Oct 23, 2026 as its new flagship, a post-trained successor to Kimi K3, at $2/$10 ($0.20 cache), a third below K3's $3/$15.",
       "estimate": false,
       "flagged": false,
-      "intel_v41": 60
+      "intel_v41": 60,
+      "superseded_by": "Kimi K3.1 Pro",
+      "deprecated": true
     },
     {
       "cluster": "chinese",
@@ -965,13 +967,28 @@
       "architecture": "MoE",
       "active_params": "49B / 1.05T total",
       "context": "1M",
-      "input_per_m": 1.36,
-      "output_per_m": 4.18,
+      "input_per_m": 0.7,
+      "output_per_m": 2.1,
       "aa_blended": 0.0,
-      "aa_index": "38",
-      "notes": "List price is $1.36/$4.18; Mistral's model card also shows a half-price preview promo ($0.68/$2.09) with no published end date.",
+      "aa_index": "51.5 (BenchLM composite); Reasoning category rank #9",
+      "notes": "Public-preview flagship; the two-week half-price launch promo ended Oct 20, 2026, and on Oct 29, 2026 Mistral published open weights and set a new permanent price of $0.70/$2.10 ($0.07 cached) on the same mistral-large-4 id.",
       "flagged": true,
-      "intel_v41": null
+      "intel_v41": null,
+      "price_history": [
+        {
+          "date": "2026-11-02",
+          "from": {
+            "input_per_m": 1.36,
+            "output_per_m": 4.18
+          },
+          "to": {
+            "input_per_m": 0.7,
+            "output_per_m": 2.1
+          },
+          "source": "https://artificialwatch.com/model-mistral-large-4.html",
+          "reason": "On Oct 29, 2026 Mistral published open weights and repriced the same mistral-large-4 endpoint to $0.70/$2.10 (cached $0.07), replacing the $1.36/$4.18 list rate the row shows."
+        }
+      ]
     },
     {
       "cluster": "chinese",
@@ -1138,9 +1155,9 @@
       "input_per_m": 2.0,
       "output_per_m": 10.0,
       "aa_blended": 0.0,
-      "aa_index": "—",
-      "notes": "Moonshot API lists $2/$10 per 1M with $0.20/M cache read, a third below Kimi K3's $3/$15.",
-      "flagged": false,
+      "aa_index": "55 on AA Intelligence Index v4.3.2 at launch (#4 overall); the live AA page now shows 46 on the newer v5.0 index",
+      "notes": "Moonshot API lists $2/$10 per 1M with $0.20/M cache read, a third below Kimi K3's $3/$15. Released Oct 23, 2026 as a post-trained successor to Kimi K3; weights promised Nov 4, 2026.",
+      "flagged": true,
       "intel_v41": null
     },
     {
@@ -1190,6 +1207,73 @@
       "aa_blended": 0.0,
       "aa_index": "—",
       "notes": "MiniMax list price is flat $0.15/$0.60 per 1M with $0.015/M cached input at any context length; free launch period ended Oct 22.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "Gemini 4 Carbon",
+      "vendor": "Google DeepMind · 2026-10-28 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "closed"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "aa_blended": 0.0,
+      "aa_index": "59 (Artificial Analysis Intelligence Index v5)",
+      "notes": "Launched Oct 28 2026 at introductory $2/$10, rising to $4/$20 after the undated intro period; cached input 95% off.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-6.1 Terra",
+      "vendor": "OpenAI · 2026-10-26 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "—",
+      "active_params": "—",
+      "context": "1.05M",
+      "input_per_m": 1.0,
+      "output_per_m": 5.0,
+      "aa_blended": 0.0,
+      "aa_index": "48 (Artificial Analysis Intelligence Index, max effort)",
+      "notes": "Released Oct 26 2026 at $1/$5 (cached input $0.05), half the price of GPT-5.6 Terra and GPT-6.1 Sol; over 272K input tokens bills at $2/$7.50.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "chinese",
+      "name": "DeepSeek V4.1 Flash Cyber",
+      "vendor": "DeepSeek · 2026-10-29 · open (MIT)",
+      "badges": [
+        {
+          "label": "CN",
+          "type": "chinese"
+        },
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "MoE",
+      "active_params": "—",
+      "context": "1M",
+      "input_per_m": 0.3,
+      "output_per_m": 1.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Cyber-tuned V4.1 Flash variant; US-hosted (Inference.net via LLM Gateway) at $0.30/$1.00 with $0.007 cache read.",
       "flagged": false,
       "intel_v41": null
     }
