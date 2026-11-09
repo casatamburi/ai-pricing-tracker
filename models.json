@@ -8,7 +8,7 @@
       "output_tokens": 400000,
       "cache_hit_fraction_of_input": 0.1
     },
-    "last_updated": "2026-11-02"
+    "last_updated": "2026-11-09"
   },
   "models": [
     {
@@ -1275,6 +1275,48 @@
       "aa_index": "—",
       "notes": "Cyber-tuned V4.1 Flash variant; US-hosted (Inference.net via LLM Gateway) at $0.30/$1.00 with $0.007 cache read.",
       "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "usopen",
+      "name": "Ripple-65B Preview",
+      "vendor": "Ricursive Intelligence · 2026-11-04 · Apache 2.0",
+      "badges": [
+        {
+          "label": "Open",
+          "type": "open"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "65B",
+      "context": "1M",
+      "input_per_m": 0.2,
+      "output_per_m": 0.6,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "US open-weight dense coding model; hosted on GMI Cloud/OpenRouter at $0.20/$0.60, though hosted context is capped at 16K vs architectural 1M.",
+      "flagged": false,
+      "intel_v41": null
+    },
+    {
+      "cluster": "western",
+      "name": "GPT-6 Cyber",
+      "vendor": "OpenAI · 2026-11-05 · closed",
+      "badges": [
+        {
+          "label": "Closed",
+          "type": "oai"
+        }
+      ],
+      "architecture": "Dense",
+      "active_params": "—",
+      "context": "1.05M",
+      "input_per_m": 20.0,
+      "output_per_m": 100.0,
+      "aa_blended": 0.0,
+      "aa_index": "—",
+      "notes": "Specialized cybersecurity variant of GPT-6 Astra requiring Daybreak Red access and approval; not generally available.",
+      "flagged": true,
       "intel_v41": null
     }
   ]
